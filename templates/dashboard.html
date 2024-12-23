@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h1 class="dashboard-title">Welcome to Geometry Tutor</h1>
+    
+    <div class="topics-grid">
+        <!-- Triangle Card -->
+        <a href="{{ url_for('topic_page', topic_name='triangle') }}" class="topic-card">
+            <div class="card-icon">△</div>
+            <h2>Triangle</h2>
+            <p>Learn about triangle properties, formulas, and solve problems</p>
+            <div class="card-footer">
+                <button class="start-btn">Start Learning</button>
+            </div>
+        </a>
+
+        <!-- Square Card -->
+        <a href="{{ url_for('topic_page', topic_name='square') }}" class="topic-card">
+            <div class="card-icon">□</div>
+            <h2>Square</h2>
+            <p>Learn about square properties, formulas, and solve problems</p>
+            <div class="card-footer">
+                <button class="start-btn">Start Learning</button>
+            </div>
+        </a>
+
+        <!-- Rectangle Card -->
+        <a href="{{ url_for('topic_page', topic_name='rectangle') }}" class="topic-card">
+            <div class="card-icon">▭</div>
+            <h2>Rectangle</h2>
+            <p>Learn about rectangle properties, formulas, and solve problems</p>
+            <div class="card-footer">
+                <button class="start-btn">Start Learning</button>
+            </div>
+        </a>
+
+        <!-- Circle Card -->
+        <a href="{{ url_for('topic_page', topic_name='circle') }}" class="topic-card">
+            <div class="card-icon">○</div>
+            <h2>Circle</h2>
+            <p>Learn about circle properties, formulas, and solve problems</p>
+            <div class="card-footer">
+                <button class="start-btn">Start Learning</button>
+            </div>
+        </a>
+
+        <!-- Cube Card -->
+        <a href="{{ url_for('topic_page', topic_name='cube') }}" class="topic-card">
+            <div class="card-icon">⬚</div>
+            <h2>Cube</h2>
+            <p>Learn about cube properties, formulas, and solve problems</p>
+            <div class="card-footer">
+                <button class="start-btn">Start Learning</button>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,433 @@
+<?xml version="1.0"?>
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/geometry-tutor"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/geometry-tutor">
+    
+    <!-- Basic Class Declarations -->
+    <Declaration><Class IRI="#Area"/></Declaration>
+    <Declaration><Class IRI="#AreaProblem"/></Declaration>
+    <Declaration><Class IRI="#Circle"/></Declaration>
+    <Declaration><Class IRI="#Cube"/></Declaration>
+    <Declaration><Class IRI="#Definition"/></Declaration>
+    <Declaration><Class IRI="#Example"/></Declaration>
+    <Declaration><Class IRI="#Formula"/></Declaration>
+    <Declaration><Class IRI="#GeometricShape"/></Declaration>
+    <Declaration><Class IRI="#LearningUnit"/></Declaration>
+    <Declaration><Class IRI="#Perimeter"/></Declaration>
+    <Declaration><Class IRI="#PerimeterProblem"/></Declaration>
+    <Declaration><Class IRI="#Problem"/></Declaration>
+    <Declaration><Class IRI="#Property"/></Declaration>
+    <Declaration><Class IRI="#Rectangle"/></Declaration>
+    <Declaration><Class IRI="#Square"/></Declaration>
+    <Declaration><Class IRI="#ThreeDimensionalShape"/></Declaration>
+    <Declaration><Class IRI="#Triangle"/></Declaration>
+    <Declaration><Class IRI="#TwoDimensionalShape"/></Declaration>
+    <Declaration><Class IRI="#Volume"/></Declaration>
+    <Declaration><Class IRI="#VolumeProblem"/></Declaration>
+
+    <!-- Object Property Declarations -->
+    <Declaration><ObjectProperty IRI="#hasArea"/></Declaration>
+    <Declaration><ObjectProperty IRI="#hasDefinition"/></Declaration>
+    <Declaration><ObjectProperty IRI="#hasDifficulty"/></Declaration>
+    <Declaration><ObjectProperty IRI="#hasExample"/></Declaration>
+    <Declaration><ObjectProperty IRI="#hasFormula"/></Declaration>
+    <Declaration><ObjectProperty IRI="#hasLearningUnit"/></Declaration>
+    <Declaration><ObjectProperty IRI="#hasPerimeter"/></Declaration>
+    <Declaration><ObjectProperty IRI="#hasProperty"/></Declaration>
+    <Declaration><ObjectProperty IRI="#hasVolume"/></Declaration>
+    <Declaration><ObjectProperty IRI="#isPrerequisiteFor"/></Declaration>
+
+    <!-- Data Property Declarations -->
+    <Declaration><DataProperty IRI="#correctAnswer_(decimal)"/></Declaration>
+    <Declaration><DataProperty IRI="#hasDescription_(string)"/></Declaration>
+    <Declaration><DataProperty IRI="#hasDifficultyLevel_(string)"/></Declaration>
+    <Declaration><DataProperty IRI="#hasFormula_(string)"/></Declaration>
+    <Declaration><DataProperty IRI="#hasStep_(string)"/></Declaration>
+    <Declaration><DataProperty IRI="#hasUnit_(string)"/></Declaration>
+
+    <!-- Class Hierarchy -->
+    <SubClassOf><Class IRI="#Area"/><Class IRI="#Property"/></SubClassOf>
+    <SubClassOf><Class IRI="#AreaProblem"/><Class IRI="#Problem"/></SubClassOf>
+    <SubClassOf><Class IRI="#Circle"/><Class IRI="#TwoDimensionalShape"/></SubClassOf>
+    <SubClassOf><Class IRI="#Cube"/><Class IRI="#ThreeDimensionalShape"/></SubClassOf>
+    <SubClassOf><Class IRI="#Definition"/><Class IRI="#LearningUnit"/></SubClassOf>
+    <SubClassOf><Class IRI="#Example"/><Class IRI="#LearningUnit"/></SubClassOf>
+    <SubClassOf><Class IRI="#Formula"/><Class IRI="#LearningUnit"/></SubClassOf>
+    <SubClassOf><Class IRI="#Perimeter"/><Class IRI="#Property"/></SubClassOf>
+    <SubClassOf><Class IRI="#PerimeterProblem"/><Class IRI="#Problem"/></SubClassOf>
+    <SubClassOf><Class IRI="#Problem"/><Class IRI="#LearningUnit"/></SubClassOf>
+    <SubClassOf><Class IRI="#Rectangle"/><Class IRI="#TwoDimensionalShape"/></SubClassOf>
+    <SubClassOf><Class IRI="#Square"/><Class IRI="#TwoDimensionalShape"/></SubClassOf>
+    <SubClassOf><Class IRI="#ThreeDimensionalShape"/><Class IRI="#GeometricShape"/></SubClassOf>
+    <SubClassOf><Class IRI="#Triangle"/><Class IRI="#TwoDimensionalShape"/></SubClassOf>
+    <SubClassOf><Class IRI="#TwoDimensionalShape"/><Class IRI="#GeometricShape"/></SubClassOf>
+    <SubClassOf><Class IRI="#Volume"/><Class IRI="#Property"/></SubClassOf>
+    <SubClassOf><Class IRI="#VolumeProblem"/><Class IRI="#Problem"/></SubClassOf>
+
+    <!-- Triangle Content -->
+    <!-- Triangle Definition -->
+    <Declaration><NamedIndividual IRI="#Triangle_Definition"/></Declaration>
+    <ClassAssertion><Class IRI="#Definition"/><NamedIndividual IRI="#Triangle_Definition"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Triangle_Definition"/>
+        <Literal datatypeIRI="&xsd;string">A triangle is a polygon with three edges and three vertices. The sum of the interior angles is 180 degrees.</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Triangle Area Formula -->
+    <Declaration><NamedIndividual IRI="#Triangle_AreaFormula"/></Declaration>
+    <ClassAssertion><Class IRI="#Formula"/><NamedIndividual IRI="#Triangle_AreaFormula"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFormula_(string)"/>
+        <NamedIndividual IRI="#Triangle_AreaFormula"/>
+        <Literal datatypeIRI="&xsd;string">Area = (base × height) / 2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Triangle_AreaFormula"/>
+        <Literal datatypeIRI="&xsd;string">The area of a triangle is calculated as half the product of its base and height.</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Triangle Example -->
+    <Declaration><NamedIndividual IRI="#Triangle_Example"/></Declaration>
+    <ClassAssertion><Class IRI="#Example"/><NamedIndividual IRI="#Triangle_Example"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Triangle_Example"/>
+        <Literal datatypeIRI="&xsd;string">Find the area of a right triangle with base 6 units and height 8 units.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasStep_(string)"/>
+        <NamedIndividual IRI="#Triangle_Example"/>
+        <Literal datatypeIRI="&xsd;string">1. Use the formula: Area = (base × height) / 2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasStep_(string)"/>
+        <NamedIndividual IRI="#Triangle_Example"/>
+        <Literal datatypeIRI="&xsd;string">2. Substitute the values: Area = (6 × 8) / 2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasStep_(string)"/>
+        <NamedIndividual IRI="#Triangle_Example"/>
+        <Literal datatypeIRI="&xsd;string">3. Calculate: Area = 48 / 2 = 24 square units</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Triangle Problems -->
+    <Declaration><NamedIndividual IRI="#Triangle_Problem_Easy"/></Declaration>
+    <ClassAssertion><Class IRI="#AreaProblem"/><NamedIndividual IRI="#Triangle_Problem_Easy"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Triangle_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">Calculate the area of a triangle with base 10 units and height 12 units.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDifficultyLevel_(string)"/>
+        <NamedIndividual IRI="#Triangle_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">easy</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#correctAnswer_(decimal)"/>
+        <NamedIndividual IRI="#Triangle_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;decimal">60.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasUnit_(string)"/>
+        <NamedIndividual IRI="#Triangle_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">square units</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Circle Content -->
+    <!-- Circle Definition -->
+    <Declaration><NamedIndividual IRI="#Circle_Definition"/></Declaration>
+    <ClassAssertion><Class IRI="#Definition"/><NamedIndividual IRI="#Circle_Definition"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Circle_Definition"/>
+        <Literal datatypeIRI="&xsd;string">A circle is a shape consisting of all points in a plane that are at a given distance from a given center point.</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Circle Area Formula -->
+    <Declaration><NamedIndividual IRI="#Circle_AreaFormula"/></Declaration>
+    <ClassAssertion><Class IRI="#Formula"/><NamedIndividual IRI="#Circle_AreaFormula"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFormula_(string)"/>
+        <NamedIndividual IRI="#Circle_AreaFormula"/>
+        <Literal datatypeIRI="&xsd;string">Area = πr²</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Circle_AreaFormula"/>
+        <Literal datatypeIRI="&xsd;string">The area of a circle is calculated using pi times the square of its radius.</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Circle Problems -->
+    <Declaration><NamedIndividual IRI="#Circle_Problem_Easy"/></Declaration>
+    <ClassAssertion><Class IRI="#AreaProblem"/><NamedIndividual IRI="#Circle_Problem_Easy"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Circle_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">Calculate the area of a circle with radius 5 units.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDifficultyLevel_(string)"/>
+        <NamedIndividual IRI="#Circle_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">easy</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#correctAnswer_(decimal)"/>
+        <NamedIndividual IRI="#Circle_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;decimal">78.54</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasUnit_(string)"/>
+        <NamedIndividual IRI="#Circle_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">square units</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Square Content -->
+    <!-- Square Definition -->
+    <Declaration><NamedIndividual IRI="#Square_Definition"/></Declaration>
+    <ClassAssertion><Class IRI="#Definition"/><NamedIndividual IRI="#Square_Definition"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Square_Definition"/>
+        <Literal datatypeIRI="&xsd;string">A square is a regular quadrilateral with four equal sides and four right angles.</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Square Area Formula -->
+    <Declaration><NamedIndividual IRI="#Square_AreaFormula"/></Declaration>
+    <ClassAssertion><Class IRI="#Formula"/><NamedIndividual IRI="#Square_AreaFormula"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFormula_(string)"/>
+        <NamedIndividual IRI="#Square_AreaFormula"/>
+        <Literal datatypeIRI="&xsd;string">Area = side²</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Square_AreaFormula"/>
+        <Literal datatypeIRI="&xsd;string">The area of a square is calculated by squaring the length of one of its sides.</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Square Problems -->
+    <Declaration><NamedIndividual IRI="#Square_Problem_Easy"/></Declaration>
+    <ClassAssertion><Class IRI="#AreaProblem"/><NamedIndividual IRI="#Square_Problem_Easy"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Square_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">Calculate the area of a square with side length 6 units.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDifficultyLevel_(string)"/>
+        <NamedIndividual IRI="#Square_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">easy</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#correctAnswer_(decimal)"/>
+        <NamedIndividual IRI="#Square_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;decimal">36.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasUnit_(string)"/>
+        <NamedIndividual IRI="#Square_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">square units</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Rectangle Content -->
+    <!-- Rectangle Definition -->
+    <Declaration><NamedIndividual IRI="#Rectangle_Definition"/></Declaration>
+    <ClassAssertion><Class IRI="#Definition"/><NamedIndividual IRI="#Rectangle_Definition"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Rectangle_Definition"/>
+        <Literal datatypeIRI="&xsd;string">A rectangle is a quadrilateral with four right angles.</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Rectangle Area Formula -->
+    <Declaration><NamedIndividual IRI="#Rectangle_AreaFormula"/></Declaration>
+    <ClassAssertion><Class IRI="#Formula"/><NamedIndividual IRI="#Rectangle_AreaFormula"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFormula_(string)"/>
+        <NamedIndividual IRI="#Rectangle_AreaFormula"/>
+        <Literal datatypeIRI="&xsd;string">Area = length × width</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Rectangle_AreaFormula"/>
+        <Literal datatypeIRI="&xsd;string">The area of a rectangle is calculated by multiplying its length by its width.</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Rectangle Problems -->
+    <Declaration><NamedIndividual IRI="#Rectangle_Problem_Easy"/></Declaration>
+    <ClassAssertion><Class IRI="#AreaProblem"/><NamedIndividual IRI="#Rectangle_Problem_Easy"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Rectangle_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">Calculate the area of a rectangle with length 8 units and width 5 units.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDifficultyLevel_(string)"/>
+        <NamedIndividual IRI="#Rectangle_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">easy</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#correctAnswer_(decimal)"/>
+        <NamedIndividual IRI="#Rectangle_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;decimal">40.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasUnit_(string)"/>
+        <NamedIndividual IRI="#Rectangle_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">square units</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Cube Content -->
+    <!-- Cube Definition -->
+    <Declaration><NamedIndividual IRI="#Cube_Definition"/></Declaration>
+    <ClassAssertion><Class IRI="#Definition"/><NamedIndividual IRI="#Cube_Definition"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Cube_Definition"/>
+        <Literal datatypeIRI="&xsd;string">A cube is a three-dimensional solid with six equal square faces.</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Cube Volume Formula -->
+    <Declaration><NamedIndividual IRI="#Cube_VolumeFormula"/></Declaration>
+    <ClassAssertion><Class IRI="#Formula"/><NamedIndividual IRI="#Cube_VolumeFormula"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFormula_(string)"/>
+        <NamedIndividual IRI="#Cube_VolumeFormula"/>
+        <Literal datatypeIRI="&xsd;string">Volume = side³</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Cube_VolumeFormula"/>
+        <Literal datatypeIRI="&xsd;string">The volume of a cube is calculated by cubing the length of one of its sides.</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Cube Problems -->
+    <Declaration><NamedIndividual IRI="#Cube_Problem_Easy"/></Declaration>
+    <ClassAssertion><Class IRI="#VolumeProblem"/><NamedIndividual IRI="#Cube_Problem_Easy"/></ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDescription_(string)"/>
+        <NamedIndividual IRI="#Cube_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">Calculate the volume of a cube with side length 4 units.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasDifficultyLevel_(string)"/>
+        <NamedIndividual IRI="#Cube_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">easy</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#correctAnswer_(decimal)"/>
+        <NamedIndividual IRI="#Cube_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;decimal">64.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasUnit_(string)"/>
+        <NamedIndividual IRI="#Cube_Problem_Easy"/>
+        <Literal datatypeIRI="&xsd;string">cubic units</Literal>
+    </DataPropertyAssertion>
+
+    <!-- Object Property Assertions -->
+    <!-- Triangle -->
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDefinition"/>
+        <NamedIndividual IRI="#Triangle"/>
+        <NamedIndividual IRI="#Triangle_Definition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFormula"/>
+        <NamedIndividual IRI="#Triangle"/>
+        <NamedIndividual IRI="#Triangle_AreaFormula"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasExample"/>
+        <NamedIndividual IRI="#Triangle"/>
+        <NamedIndividual IRI="#Triangle_Example"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProperty"/>
+        <NamedIndividual IRI="#Triangle"/>
+        <NamedIndividual IRI="#Triangle_Problem_Easy"/>
+    </ObjectPropertyAssertion>
+
+    <!-- Circle -->
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDefinition"/>
+        <NamedIndividual IRI="#Circle"/>
+        <NamedIndividual IRI="#Circle_Definition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFormula"/>
+        <NamedIndividual IRI="#Circle"/>
+        <NamedIndividual IRI="#Circle_AreaFormula"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProperty"/>
+        <NamedIndividual IRI="#Circle"/>
+        <NamedIndividual IRI="#Circle_Problem_Easy"/>
+    </ObjectPropertyAssertion>
+
+    <!-- Square -->
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDefinition"/>
+        <NamedIndividual IRI="#Square"/>
+        <NamedIndividual IRI="#Square_Definition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFormula"/>
+        <NamedIndividual IRI="#Square"/>
+        <NamedIndividual IRI="#Square_AreaFormula"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProperty"/>
+        <NamedIndividual IRI="#Square"/>
+        <NamedIndividual IRI="#Square_Problem_Easy"/>
+    </ObjectPropertyAssertion>
+
+    <!-- Rectangle -->
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDefinition"/>
+        <NamedIndividual IRI="#Rectangle"/>
+        <NamedIndividual IRI="#Rectangle_Definition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFormula"/>
+        <NamedIndividual IRI="#Rectangle"/>
+        <NamedIndividual IRI="#Rectangle_AreaFormula"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProperty"/>
+        <NamedIndividual IRI="#Rectangle"/>
+        <NamedIndividual IRI="#Rectangle_Problem_Easy"/>
+    </ObjectPropertyAssertion>
+
+    <!-- Cube -->
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDefinition"/>
+        <NamedIndividual IRI="#Cube"/>
+        <NamedIndividual IRI="#Cube_Definition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFormula"/>
+        <NamedIndividual IRI="#Cube"/>
+        <NamedIndividual IRI="#Cube_VolumeFormula"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasProperty"/>
+        <NamedIndividual IRI="#Cube"/>
+        <NamedIndividual IRI="#Cube_Problem_Easy"/>
+    </ObjectPropertyAssertion>
+
+</Ontology>

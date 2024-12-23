@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}{{ topic|title }} Problems{% endblock %}
+
+{% block content %}
+<div class="learning-container">
+    <!-- Learning Path Section -->
+    <div class="learning-path">
+        <h2>{{ topic|title }} Learning Path</h2>
+        
+        <!-- Definitions -->
+        <div class="section">
+            <h3>Definitions</h3>
+            <div class="definition-card">
+                {% if learning_path.definitions %}
+                    {% for def in learning_path.definitions %}
+                        <p>{{ def.description }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p>No definitions available yet.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Formulas -->
+        <div class="section">
+            <h3>Formulas</h3>
+            <div class="formula-card">
+                {% if learning_path.formulas %}
+                    {% for formula in learning_path.formulas %}
+                        <p><strong>{{ formula.formula }}</strong></p>
+                        <p>{{ formula.description }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p>No formulas available yet.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Examples -->
+        <div class="section">
+            <h3>Examples</h3>
+            <div class="example-card">
+                {% if learning_path.examples %}
+                    {% for example in learning_path.examples %}
+                        <p><strong>Problem:</strong> {{ example.description }}</p>
+                        {% if example.steps %}
+                            <p><strong>Solution:</strong></p>
+                            <ol>
+                            {% for step in example.steps %}
+                                <li>{{ step }}</li>
+                            {% endfor %}
+                            </ol>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <p>No examples available yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Practice Problems Section -->
+    <div class="problem-section">
+        <h2>Practice Problems</h2>
+        <div class="progress-info">
+            <p>Current Level: <span id="current-level">{{ progress.current_level }}</span></p>
+            <p>Problems Solved: <span id="problems-solved">{{ progress.problems_solved }}</span></p>
+            <p>Correct Answers: <span id="correct-answers">{{ progress.correct_answers }}</span></p>
+        </div>
+
+        <div id="problem-container" class="problem-card">
+            <div id="problem-text"></div>
+            <div id="problem-steps"></div>
+            <div class="answer-section">
+                <input type="number" id="answer-input" step="0.01" placeholder="Enter your answer">
+                <input type="text" id="unit-input" placeholder="Unit (e.g., cm²)">
+                <button id="submit-answer" class="btn btn-primary">Submit Answer</button>
+            </div>
+            <div id="feedback"></div>
+        </div>
+
+        <button id="next-problem" class="btn btn-secondary" style="display: none;">Next Problem</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const TOPIC = "{{ topic }}";
+</script>
+<script src="{{ url_for('static', filename='js/problem.js') }}"></script>
+{% endblock %}
