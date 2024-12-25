@@ -37,14 +37,14 @@ pip install -r requirements.txt
 ### 3. Test the Application Locally
 Run the application to ensure it's working before configuring Gunicorn:
 ```bash
-python app.py -d
+python app.py
 ```
 
 ### 4. Install and Configure Gunicorn
 Install Gunicorn and start the application in detached mode:
 ```bash
 pip install gunicorn
-gunicorn --bind 0.0.0.0:8000 app:app -d
+gunicorn --bind 0.0.0.0:8000 app:app --daemon
 ```
 
 ### 5. Create a Systemd Service
