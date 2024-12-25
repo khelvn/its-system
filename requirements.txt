@@ -1,5 +1,4 @@
-cffi==1.17.1
-cryptography==43.0.1
-packaging==24.1
-pycparser==2.22
-wheel @ file:///usr/local/Cellar/python%403.12/3.12.7/libexec/wheel-0.44.0-py3-none-any.whl#sha256=c01326144883c50263d6967d1145640f3bbc8dfab32c2cbe817ef61d7a810219
+flask
+owlready2
+python-dotenv==0.21.1
+numpy
