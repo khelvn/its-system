@@ -22,6 +22,11 @@ sudo apt install python3 python3-venv python3-pip nginx
 ```
 
 ### 2. Set Up the Application
+Download/Clone the application from GitHub:
+```bash
+git clone https://github.com/khelvn/its-system.git
+```
+
 Navigate to the application directory and create a virtual environment:
 ```bash
 cd its_system
